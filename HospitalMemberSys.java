@@ -11,7 +11,7 @@ package lg13q2;
  */
 public class HospitalMemberSys {
 
-    public static int MAX_SIZE = 4;
+    public static int MAX_SIZE = 5;
     public static HospitalMember[] hm = new HospitalMember[MAX_SIZE];
     public static int count = 0;
 
