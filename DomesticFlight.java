@@ -1,3 +1,4 @@
+
 package javaproject;
 
 public class DomesticFlight extends Flight {
@@ -28,3 +29,5 @@ public class DomesticFlight extends Flight {
 
     }
 }
+
+
