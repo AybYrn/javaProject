@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package javaproject;
 
-/**
- *
- * @author Lenovo
- */
 public class DomesticFlight extends Flight {
 
     private int turkishIdentityNum;
@@ -20,7 +12,11 @@ public class DomesticFlight extends Flight {
 
     @Override
     public void calculatePrice() {
-
+        double airportServiceCharge = 50;
+        double vatRatio = 0.15; //vat(kdv)ratio %18
+        this.price += (price*vatRatio)+airportServiceCharge;
+        
+        
     }
 
     public int getTurkishIdentityNum() {
@@ -29,10 +25,9 @@ public class DomesticFlight extends Flight {
 
     @Override
     public String toString() {
-        return "\nDomestic Flight\n"
-                + "-----------------\n"
-                + super.toString()
-                + "\nTC N= " + turkishIdentityNum;
-    }
+        return super.toString();
 
+    }
 }
+
+

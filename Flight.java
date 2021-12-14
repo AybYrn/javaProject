@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package javaproject;
 
-/**
- *
- * @author Lenovo
- */
 public abstract class Flight {
 
     protected String flightId;
@@ -24,6 +16,8 @@ public abstract class Flight {
         this.fromtoDest = fromtoDest;
         this.gate = gate;
         this.price = price;
+        
+        numOfFlight++;
     }
 
     public boolean checkId(String flightId) {
@@ -46,13 +40,13 @@ public abstract class Flight {
 
     @Override
     public String toString() {
-        return "\nFlight\n"
-                + "----------\n"
-                + "FlightId= " + flightId
-                + "\nFligh Date & Time= " + flighDateTime
+        return    "Flight No= " + flightId
+                + "\nFlight Date & Time= " + flighDateTime
                 + "\nFrom to Destination= " + fromtoDest
                 + "\nGate= " + gate
                 + "\nPrice=" + price;
+                
+                
+                 
     }
-
 }
