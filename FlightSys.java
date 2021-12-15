@@ -15,7 +15,7 @@ public class FlightSys {
         return false;
     }
 
-    public static boolean addTicket(String flightType, String flightId, String flighDateTime, String fToD, int gate, double price, int tcNo, String passportId, double cargoWeight) {
+    public static boolean addFlight(String flightType, String flightId, String flighDateTime, String fToD, int gate, double price, int tcNo, String passportId, double cargoWeight) {
         DomesticFlight dF;
         InternationalFlight interF;
 
