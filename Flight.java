@@ -1,4 +1,3 @@
-
 package javaproject;
 
 public abstract class Flight {

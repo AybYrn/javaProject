@@ -1,6 +1,6 @@
 package javaproject;
 
-public class InternationalFlight extends Flight {
+public class InternationalFlight extends Flight{
 
     private String passportId;
     private Cargo cargo;
@@ -28,6 +28,12 @@ public class InternationalFlight extends Flight {
         return passportId;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    
+    
     public Cargo getCargo() {
         return cargo;
     }
@@ -36,5 +42,7 @@ public class InternationalFlight extends Flight {
     public String toString() {
         return super.toString();           
     }
+
+   
 
 }
