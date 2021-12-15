@@ -2,7 +2,7 @@ package javaproject;
 
 import java.util.ArrayList;
 
-public class TicketSys {
+public class TicketSys implements TicketInterface{
 
     private static int seat;
     private static String Class; //C must be capital due to reserved word "class"
@@ -98,6 +98,25 @@ public class TicketSys {
                 fl.calculatePrice();
             }
         }
+    }
+
+    @Override
+    public double totalTicketPrice() {
+        double sum=0;
+        if(!arr.isEmpty()){
+            for(Flight fl:arr){
+                if(fl instanceof DomesticFlight)
+                   sum+=((DomesticFlight)fl).getPrice();
+                else{
+                    sum+=((InternationalFlight)fl).getPrice();
+                }
+            }
+            return sum;
+        }else{
+            return -1;
+        }
+        
+        
     }
 
 }
