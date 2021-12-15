@@ -1,4 +1,3 @@
-
 package javaproject;
 
 public class DomesticFlight extends Flight {
@@ -19,6 +18,12 @@ public class DomesticFlight extends Flight {
         
     }
 
+    public double getPrice() {
+        return price;
+    }
+    
+    
+
     public int getTurkishIdentityNum() {
         return turkishIdentityNum;
     }
@@ -29,5 +34,3 @@ public class DomesticFlight extends Flight {
 
     }
 }
-
-
