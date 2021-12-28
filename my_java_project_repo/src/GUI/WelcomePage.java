@@ -87,8 +87,8 @@ public class WelcomePage extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/brandIcon.png"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 60, 80));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/byTicket.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 140, 70));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/passengerEntrance.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, 140));
 
         jSeparator2.setForeground(new java.awt.Color(0, 51, 255));
         getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 512, 20));

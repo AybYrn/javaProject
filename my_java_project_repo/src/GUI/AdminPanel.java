@@ -5,6 +5,7 @@
  */
 package GUI;
 
+
 /**
  *
  * @author ugure
@@ -14,9 +15,12 @@ public class AdminPanel extends javax.swing.JFrame {
     /**
      * Creates new form AdminPanel
      */
+    
+   
     public AdminPanel() {
         setLocationRelativeTo(null); //center
         initComponents();
+        
     }
 
     /**
@@ -29,32 +33,93 @@ public class AdminPanel extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        flightTypeCMB = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        priceTXT = new javax.swing.JTextField();
+        flightNoTXT = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        flightDateTimeTXT = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        fromToDestTXT = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        gateTXT1 = new javax.swing.JTextField();
+        gotoWelcomePage = new javax.swing.JButton();
+        adminPanelInfoTXT = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("ADMIN PANEL");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel1))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jLabel1))
-        );
+        flightTypeCMB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Domestic Flight", "International Flight", " ", " " }));
+        getContentPane().add(flightTypeCMB, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 120, -1));
+
+        jLabel2.setText("Price");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, -1, -1));
+        getContentPane().add(priceTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 70, -1));
+        getContentPane().add(flightNoTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 130, -1));
+
+        jLabel3.setText("Flight No");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
+
+        jLabel4.setText("Flight Date-Time");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, -1, -1));
+        getContentPane().add(flightDateTimeTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 130, -1));
+
+        jLabel5.setText("From to Dest.");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
+        getContentPane().add(fromToDestTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+
+        jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jButton1.setText("ADD NEW FLIGHT");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 220, 70));
+
+        jLabel6.setText("Gate");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+        getContentPane().add(gateTXT1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 70, -1));
+
+        gotoWelcomePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/exit.png"))); // NOI18N
+        gotoWelcomePage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gotoWelcomePageActionPerformed(evt);
+            }
+        });
+        getContentPane().add(gotoWelcomePage, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 90, 80));
+
+        adminPanelInfoTXT.setEditable(false);
+        adminPanelInfoTXT.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        getContentPane().add(adminPanelInfoTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 370, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void gotoWelcomePageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoWelcomePageActionPerformed
+       WelcomePage wl = new WelcomePage();
+        wl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_gotoWelcomePageActionPerformed
+
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField adminPanelInfoTXT;
+    private javax.swing.JTextField flightDateTimeTXT;
+    private javax.swing.JTextField flightNoTXT;
+    private javax.swing.JComboBox<String> flightTypeCMB;
+    private javax.swing.JTextField fromToDestTXT;
+    private javax.swing.JTextField gateTXT1;
+    private javax.swing.JButton gotoWelcomePage;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField priceTXT;
     // End of variables declaration//GEN-END:variables
 }
