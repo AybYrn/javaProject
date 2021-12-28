@@ -130,6 +130,9 @@ public class My_Ticket extends javax.swing.JFrame {
                     allTicketTxtArea.setText(TicketSys.displayTicket()); //refresh the ticket txt area
                     totalPriceTXT.setText(TS.totalTicketPrice()+"");
                 }
+            else{
+                myTicketActionInfoTXT.setText("Flight no has not found!");
+            }
        }else{
             myTicketActionInfoTXT.setText("Add a valid flight no!");
        }
