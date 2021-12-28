@@ -11,13 +11,18 @@ public class DomesticFlight extends Flight {
 
     @Override
     public void calculatePrice() {
-        double airportServiceCharge = 50;
-        double vatRatio = 0.15; //vat(kdv)ratio %18
-        this.price += (price*vatRatio)+airportServiceCharge;
         
+        if(this.lastPriced==false){
+            double airportServiceCharge = 50;
+            double vatRatio = 0.15; //vat(kdv)ratio %18
+            this.price += (price*vatRatio)+airportServiceCharge;
+            this.lastPriced=true;
+        }
         
+  
     }
 
+    @Override
     public double getPrice() {
         return price;
     }

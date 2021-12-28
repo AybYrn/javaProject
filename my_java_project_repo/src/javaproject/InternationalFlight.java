@@ -14,14 +14,18 @@ public class InternationalFlight extends Flight{
 
     @Override
     public void calculatePrice() {
-         double airportServiceCharge = 50;
-         double vatRatio = 0.20; //vat(kdv)ratio %20
-         this.price+=(price*vatRatio)+airportServiceCharge;
+        if(this.lastPriced==false){
+                double airportServiceCharge = 50;
+                double vatRatio = 0.20; //vat(kdv)ratio %20
+                this.price+=(price*vatRatio)+airportServiceCharge;
         
         
             if(cargo.getWeight()>25){ //if cargo weight is more than 25 KG 
                 this.price+= 75; //add 100$ to price and create new price.
             }
+            this.lastPriced=true;
+        }
+        
     }
 
     public String getPassportId() {

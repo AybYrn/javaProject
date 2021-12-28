@@ -10,6 +10,7 @@ public abstract class Flight {
     protected static int numOfFlight = 0;
     protected String seat;
     protected String nameSurname;
+    protected boolean lastPriced=false;
     
 
     public Flight(String flightId, String flighDateTime, String fromtoDest, int gate, double price,String seat,String nmeSrname) {
