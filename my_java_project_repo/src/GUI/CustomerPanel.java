@@ -1,7 +1,7 @@
 package GUI;
 
 import java.util.ArrayList;
-import javaproject.DomesticFlight;
+
 import javaproject.FlightSys;
 import javaproject.Flight;
 import javaproject.TicketSys;
@@ -10,8 +10,12 @@ public class CustomerPanel extends javax.swing.JFrame {
 
     WelcomePage WP;
     String flightType;
+    ArrayList<Flight> temp;
+    My_Ticket myTicket= new My_Ticket();
+   
 
     public CustomerPanel(WelcomePage wlcm) {
+        temp = FlightSys.getArr();
         setLocationRelativeTo(null); //center
         initComponents();
         allFlightTXTarea.setText(FlightSys.display());
@@ -56,7 +60,6 @@ public class CustomerPanel extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         nameSurnameTXT = new javax.swing.JTextField();
         purchaseTicket = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         tcNOpanel = new javax.swing.JPanel();
         tcNoTXT = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -64,12 +67,20 @@ public class CustomerPanel extends javax.swing.JFrame {
         jTextField10 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         InterFlightPanel = new javax.swing.JPanel();
-        passportTXT = new javax.swing.JTextField();
+        cargoWeightTxt = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jTextField11 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        passportTXT = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         ticketPurchaseMessageTXT = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        gotoMyTicketBTN = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -110,7 +121,7 @@ public class CustomerPanel extends javax.swing.JFrame {
                 disposeExitPanelActionPerformed(evt);
             }
         });
-        getContentPane().add(disposeExitPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 10, 70, 70));
+        getContentPane().add(disposeExitPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 80, 80));
 
         ticketTypeCMB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Domestic Flight", "International Flight", " " }));
         ticketTypeCMB.addActionListener(new java.awt.event.ActionListener() {
@@ -123,13 +134,13 @@ public class CustomerPanel extends javax.swing.JFrame {
         ticketPurchasePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setText("Seat");
-        ticketPurchasePanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+        ticketPurchasePanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         seatCMB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A1", "A2", "A3", "A4", "A5", "A6", "B1", "B2", "B3", "B4", "B5", "B6", "C1", "C2", "C3", "C4", "C5", "C6", "E1", "E2", "E3", "E4", "E5", "E6", "F1", "F2", "F3", "F4", "F5", "F6", "G1", "G2", "G3", "G4", "G5", "G6", " " }));
-        ticketPurchasePanel.add(seatCMB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 60, -1));
+        ticketPurchasePanel.add(seatCMB, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 80, -1));
 
-        jLabel7.setText("Flight NO:");
-        ticketPurchasePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jLabel7.setText("EX: Lufthansa-XQ794");
+        ticketPurchasePanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
         flightNoTXT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,10 +159,7 @@ public class CustomerPanel extends javax.swing.JFrame {
                 purchaseTicketActionPerformed(evt);
             }
         });
-        ticketPurchasePanel.add(purchaseTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 110, 70));
-
-        jLabel5.setText("BUY");
-        ticketPurchasePanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, -1, -1));
+        ticketPurchasePanel.add(purchaseTicket, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 100, 70));
 
         tcNOpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         tcNOpanel.add(tcNoTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 150, -1));
@@ -170,10 +178,10 @@ public class CustomerPanel extends javax.swing.JFrame {
         ticketPurchasePanel.add(tcNOpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 370, 60));
 
         InterFlightPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        InterFlightPanel.add(passportTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 150, -1));
+        InterFlightPanel.add(cargoWeightTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 150, -1));
 
         jLabel10.setText("Passport No");
-        InterFlightPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+        InterFlightPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel5.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 150, -1));
@@ -183,14 +191,47 @@ public class CustomerPanel extends javax.swing.JFrame {
 
         InterFlightPanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 260, 70));
 
+        jLabel11.setText("EX: 25 kg");
+        InterFlightPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, -1));
+
+        passportTXT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passportTXTActionPerformed(evt);
+            }
+        });
+        InterFlightPanel.add(passportTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 150, -1));
+
+        jLabel14.setText("kg");
+        InterFlightPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
+
+        jLabel15.setText("Cargo Weight");
+        InterFlightPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+
         ticketPurchasePanel.add(InterFlightPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 390, 100));
 
         ticketPurchaseMessageTXT.setEditable(false);
         ticketPurchaseMessageTXT.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         ticketPurchaseMessageTXT.setDisabledTextColor(new java.awt.Color(204, 0, 0));
-        ticketPurchasePanel.add(ticketPurchaseMessageTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 310, -1));
+        ticketPurchasePanel.add(ticketPurchaseMessageTXT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 310, -1));
 
-        getContentPane().add(ticketPurchasePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 410, 370));
+        jLabel5.setText("My Ticket");
+        ticketPurchasePanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 60, -1));
+
+        gotoMyTicketBTN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/myTicket.png"))); // NOI18N
+        gotoMyTicketBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gotoMyTicketBTNActionPerformed(evt);
+            }
+        });
+        ticketPurchasePanel.add(gotoMyTicketBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 120, 80));
+
+        jLabel9.setText("BUY");
+        ticketPurchasePanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
+
+        jLabel16.setText("Flight NO:");
+        ticketPurchasePanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+
+        getContentPane().add(ticketPurchasePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 490, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -220,89 +261,132 @@ public class CustomerPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_flightNoTXTActionPerformed
 
+    @SuppressWarnings("UnusedAssignment")
     private void purchaseTicketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseTicketActionPerformed
-        String flightNo,nameSurname,seat,passportNo,tcNo;
-        double cargoWeight;
-     
-       
+        String flightNo, nameSurname, seat, passportNo, tcNo;
         
+        double cargoWeight=0.0;
+
         if (flightType.equals("Domestic Flight")) {
-            
-            
-            try{
+
+            try {
                 flightNo = flightNoTXT.getText();
                 nameSurname = nameSurnameTXT.getText();
-                tcNo =tcNoTXT.getText();
+                tcNo = tcNoTXT.getText();
                 seat = (String) seatCMB.getSelectedItem();
-                passportNo="-";
+                passportNo = "-";
                 
-               if(flightNo.equalsIgnoreCase("") || nameSurname.equalsIgnoreCase("") || tcNo.equalsIgnoreCase(""))
-                {
+
+                if (flightNo.equalsIgnoreCase("") || nameSurname.equalsIgnoreCase("") || tcNo.equalsIgnoreCase("")) {
                     ticketPurchaseMessageTXT.setText("Please Fill all blanks!!!");
                     flightNoTXT.setText("");
                     nameSurnameTXT.setText("");
                     tcNoTXT.setText("");
-                }else{
+                } else {
                     flightNoTXT.setText("");
                     nameSurnameTXT.setText("");
                     tcNoTXT.setText("");
-                    
-                    ArrayList<Flight> temp=FlightSys.getArr();
-                    
-                    for(Flight flt:temp){
-                       
-                        if(flt.checkId(flightNo)){
-                           boolean exp=TicketSys.addTicket(flightType, flightNo,flt.getFlightDateTime(),flt.getFromToDest(),flt.getGate(), flt.getPrice(), tcNo, passportNo,0.0, seat,nameSurname);
-                           if(exp){
-                               ticketPurchaseMessageTXT.setText("Ticket purchased");
-                               
-                               System.out.println(TicketSys.displayTicket());
-                              
-                           }else{
-                               ticketPurchaseMessageTXT.setText("Fligt No has not found!");
-                               System.out.println(TicketSys.displayTicket());
-                           }
-                           
-                            
-                            
-                            
+
+                     
+
+                    for (Flight flt : temp) {
+
+                        if (flt.checkId(flightNo)) {
+                            boolean exp = TicketSys.addTicket(flightType, flightNo, flt.getFlightDateTime(), flt.getFromToDest(), flt.getGate(), flt.getPrice(), tcNo, passportNo, 0.0, seat, nameSurname);
+                            if (exp) {
+                                ticketPurchaseMessageTXT.setText("Ticket purchased");
+
+                                //System.out.println(TicketSys.displayTicket());
+
+                            } else {
+                                ticketPurchaseMessageTXT.setText("Fligt No has not found!");
+                                //System.out.println(TicketSys.displayTicket());
+                            }
+
                         }
-                    
+
                     }
-                    
-                    
+
                 }
-            }catch(NumberFormatException ex){
+            } catch (NumberFormatException ex) {
                 //System.out.println("Error");
             }
-            
-            
-           
-            
+
         } else {
-            flightNo = flightNoTXT.getText();
-            nameSurname = nameSurnameTXT.getText();
-            tcNo = "0";
-            seat = (String) seatCMB.getSelectedItem();
-            passportNo = passportTXT.getText();
+            
+            try{
+                flightNo = flightNoTXT.getText();
+                nameSurname = nameSurnameTXT.getText();
+                tcNo = "-";
+                seat = (String) seatCMB.getSelectedItem();
+                passportNo = passportTXT.getText();
+               
+                
+                if (flightNo.equalsIgnoreCase("") || nameSurname.equalsIgnoreCase("") || passportNo.equalsIgnoreCase("") || cargoWeightTxt.getText().isEmpty()) {
+                    ticketPurchaseMessageTXT.setText("Please Fill all blanks!!!");
+                     flightNoTXT.setText("");
+                    nameSurnameTXT.setText("");
+                    cargoWeightTxt.setText("");
+                } else {
+                cargoWeight =Double.parseDouble(cargoWeightTxt.getText());
+                flightNoTXT.setText("");
+                nameSurnameTXT.setText("");
+                cargoWeightTxt.setText("");
+                
+                
+                for (Flight flt : temp) {
+
+                        if (flt.checkId(flightNo)) {
+                            boolean exp = TicketSys.addTicket(flightType, flightNo, flt.getFlightDateTime(), flt.getFromToDest(), flt.getGate(), flt.getPrice(), tcNo, passportNo, cargoWeight, seat, nameSurname);
+                            if (exp) {
+                                ticketPurchaseMessageTXT.setText("Ticket purchased");
+
+                                //System.out.println(TicketSys.displayTicket());
+
+                            } else {
+                                ticketPurchaseMessageTXT.setText("Fligt No has not found!");
+                                //System.out.println(TicketSys.displayTicket());
+                            }
+
+                        }
+
+                    }
+            }
+            }catch(NumberFormatException ex){
+                System.out.println("Error");
+            }
+            
+
+            
         }
-        
-        
-        
-        
-        
+
+
     }//GEN-LAST:event_purchaseTicketActionPerformed
+
+    private void gotoMyTicketBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoMyTicketBTNActionPerformed
+        myTicket.setVisible(true);
+    }//GEN-LAST:event_gotoMyTicketBTNActionPerformed
+
+    private void passportTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passportTXTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passportTXTActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel InterFlightPanel;
     private javax.swing.JTextArea allFlightTXTarea;
+    private javax.swing.JTextField cargoWeightTxt;
     private javax.swing.JButton disposeExitPanel;
     private javax.swing.JTextField flightNoTXT;
+    private javax.swing.JButton gotoMyTicketBTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -310,6 +394,7 @@ public class CustomerPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;

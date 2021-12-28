@@ -64,9 +64,9 @@ public class TicketSys implements TicketInterface{
             for (int i = 0; i < arr.size(); i++) {
                 temp = (Flight) arr.get(i);
                 if (temp instanceof DomesticFlight) {
-                    out += (i + 1) + "- " + temp.toString() +"\nName Surname= "+temp.getNameSurname() +"\n TC No= " + ((DomesticFlight) temp).getTurkishIdentityNum() + "\nSeat No= " + temp.getSeat() + "\n\n";
+                    out += (i + 1) + "- " + temp.toString() +"\nName Surname= "+temp.getNameSurname() +"\nTC No= " + ((DomesticFlight) temp).getTurkishIdentityNum() + "\nSeat No= " + temp.getSeat() + "\n\n";
                 } else {
-                    out += (i + 1) + "- " + temp.toString() +"\nName Surname= "+temp.getNameSurname() +"\n Passport Id= " + ((InternationalFlight) temp).getPassportId() + "\nSeat No= " + temp.getSeat() + "\n\n";
+                    out += (i + 1) + "- " + temp.toString() +"\nName Surname= "+temp.getNameSurname() +"\nPassport Id= " + ((InternationalFlight) temp).getPassportId() + "\nSeat No= " + temp.getSeat() + "\n\n";
                 }
 
             }
@@ -101,7 +101,7 @@ public class TicketSys implements TicketInterface{
     }
 
     @Override
-    public double totalTicketPrice() {
+    public  double totalTicketPrice() {
         double sum=0;
         if(!arr.isEmpty()){
             for(Flight fl:arr){
@@ -113,7 +113,7 @@ public class TicketSys implements TicketInterface{
             }
             return sum;
         }else{
-            return -1;
+            return 0.0;
         }
         
         
